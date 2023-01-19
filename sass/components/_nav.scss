@@ -1,0 +1,26 @@
+.box-nav {
+   background: linear-gradient(rgb(47, 47, 47), rgb(121, 118, 118));
+
+   &__nav {
+      height: 40px;
+      &__list {
+         display: flex;
+         align-content: center;
+         gap: 30px;
+         justify-content: center;
+         list-style-type: none;
+         &__item {
+            border-right: 1px solid white;
+            & a {
+               padding: 5px 30px;
+               text-decoration: none;
+               font-size: 2em;
+               color: white;
+               &:hover {
+                  color: orangered;
+               }
+            }
+         }
+      }
+   }
+}
