@@ -1,16 +1,21 @@
 <div class="cards-container">
-      {{#each cards}}
+      {{#each producto}}
 <div class="card">
    <article class="card__article">
       <div class="card__image-container">
-         <img class="" src="{{img}}" alt="un personaje de esta famosa pelicula">
+         <h2 class="card__heading">{{name}}</h2>
+         <img class="" src="{{img}}" alt="{{name}}">
 
       </div>
       <div class="card__content">
-         <h2 class="card__heading">{{name}}</h2>
-         <h3 class="card__price">{{price}}</h3>
          <p class="card__description">{{description}}</p>
-         <a class="card__agg-cart link-cart" data-productid="{{productId}}" href="#" id="comprar" >comprar</a>
+         <h3 class="card__price">$ {{precio}}</h3>
+         <div class="group_button">
+            <a class="card__agg-cart link-cart" href="#" id="comprar" >comprar</a>
+            <form action="/{{_id}}?_method=DELETE" method="post" enctype="multipart/form-data">
+            <input type="submit" value="Eliminar">
+            </form>
+         </div>
       </div>
    </article>
 </div>

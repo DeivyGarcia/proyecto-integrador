@@ -1,5 +1,23 @@
 .cards-container {
+   & h2 {
+      color: black;
+      border-bottom: #000000 2px solid;
+   }
+   & input {
+      display: block;
+      width: 100px;
+      padding: 5px;
+      border-radius: 10px;
+      border: #000000 2px solid;
+      background-color: red;
+      color: white;
+      margin: 0 auto;
+      cursor: pointer;
+      &:hover{
+         background-color: rgb(245, 84, 84);
+      }
    
+   }
    background-color: rgb(255, 173, 150);
    padding: 1em;
    display: grid;

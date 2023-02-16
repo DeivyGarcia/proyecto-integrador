@@ -1,16 +1,27 @@
-const controller = {}
-controller.index = (req, res)=>{
-   
-   res.render('home', {layout: false})
-}
-controller.home = (req, res)=>{
+const productos = require('../models/produts.model');
 
-   res.render('home', {layout: false})
+const controller = {}
+
+controller.index = async(req, res)=>{
+   try {
+      const producto = await productos.find().lean();
+      res.render('home', {producto: producto})
+   } catch (error) {
+      console.log('algo fallo: ', error);
+   }
 }
-controller.alta = (req, res)=>{
-   
+controller.home = async(req, res)=>{
+   try {
+      const producto = await productos.find().lean();
+      res.render('home', {producto: producto, layout: false})
+   } catch (error) {
+      console.log('algo fallo: ', error);
+   }
+}
+controller.mostrarProducto = async (req, res)=>{
    res.render('alta', {layout: false})
 }
+
 controller.contact = (req, res)=>{
    
    res.render('contact', {layout: false}
